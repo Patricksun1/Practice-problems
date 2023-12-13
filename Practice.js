@@ -147,3 +147,16 @@
 //console.log(pos)
 
 
+//Find the maximum number in an array of numbers (FIRST SORTING ALGORITHM)
+let arr=[2,4,1,2,5,7,2,4,19,2,3]
+
+function maxval(arr){
+    let max=arr[0]
+    for (let i=1; i<arr.length;i++){
+        if(max<arr[i]){
+         max=arr[i];
+        }
+    }
+    console.log(max)
+}
+maxval(arr)
