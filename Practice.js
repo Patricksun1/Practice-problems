@@ -262,7 +262,7 @@ function deposit() {
     const depositAmount = prompt("What is your deposit amount? ");
     const depositAmountFloat = parseFloat(depositAmount);
 
-    if (isNan(numberdepositAmount) || numberdepositAmount <= 0) {
+    if (isNaN(depositAmount) || depositAmount <= 0) {
       console.log("Please try again");
     } else {
       return depositAmountFloat;
@@ -274,7 +274,7 @@ function deposit() {
 function getNumberOfLines() {
   while (true) {
     let numberOfLines = prompt("Number Of Lines to bet on? ");
-    let intnumberOfLines = parseint(numberOfLines);
+    let intnumberOfLines = parseFloat(numberOfLines);
 
     if (
       isNaN(intnumberOfLines) ||
@@ -289,8 +289,8 @@ function getNumberOfLines() {
 }
 
 function getBet(balance, numberOfLines) {
-  let bet = prompt("Enter the bet per line: ");
-  let betFloat = parseFloat(bet) * numberOfLines;
+  let betAmount = prompt("Enter the bet per line: ");
+  let betFloat = parseFloat(betAmount);
 
   if (
     isNaN(betAmount) ||
@@ -376,13 +376,14 @@ function game() {
   console.log("You have a balance of $"+balance)
   const numberOfLines = getNumberOfLines();
   const bet = getBet(balance, numberOfLines);
-  balance -= bet * numberOfLines
+  balance -= bet*numberOfLines;
   const reels = spin();
   const rows = transpose(reels);
   printRows(rows);
   const winnings = getWinnings(rows, bet, numberOfLines);
-  balance += winnings
+  balance = balance + winnings;
   console.log("You won,$" + winnings.toString());
+  console.log("You now have, $"+balance + " continue?");
 
   if (balance <=0){
     console.log("You ran out of money")
