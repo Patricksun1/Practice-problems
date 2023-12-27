@@ -239,7 +239,7 @@
 
 //1. deposit money
 
-const prompt = require("prompt-sync")();
+/*const prompt = require("prompt-sync")();
 
 const ROWS = 3;
 const COLS = 3;
@@ -397,4 +397,22 @@ function game() {
   }
   
 
-game();
+game();*/
+
+const prompt = require("prompt-sync")();
+
+function ctf(){
+let unit = prompt("What is the unit? ")
+if(unit === "C" || unit === "c"){
+  let tempC = prompt("What is the temperature in C? ")
+  console.log("The temperature is " + (tempC*1.8+32) +" degrees Farenheit") }
+else if (unit === "F" || unit === "f"){
+  let tempF = prompt("What is the temperature in F? ")
+  console.log("The temperature is "+((tempF-32)/1.8)+ "degrees Celcius")
+}
+else{
+  console.log("Please provide a valid unit")
+}
+}
+
+ctf()
