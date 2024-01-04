@@ -399,20 +399,143 @@ function game() {
 
 game();*/
 
-const prompt = require("prompt-sync")();
+/*let sum = 0
 
-function ctf(){
-let unit = prompt("What is the unit? ")
-if(unit === "C" || unit === "c"){
-  let tempC = prompt("What is the temperature in C? ")
-  console.log("The temperature is " + (tempC*1.8+32) +" degrees Farenheit") }
-else if (unit === "F" || unit === "f"){
-  let tempF = prompt("What is the temperature in F? ")
-  console.log("The temperature is "+((tempF-32)/1.8)+ "degrees Celcius")
+function sumArray(arr){
+for (let i=0;i<arr.length;i++){
+  sum += arr[i]
+  }
 }
-else{
-  console.log("Please provide a valid unit")
+let arr = [1,2,3,213,1,231,1]
+sumArray(arr)
+console.log(sum)*/
+
+/*function findMax(array){
+let index = array[0]
+for (let i=0;i<array.length;i++){
+if (index<array[i])
+{
+  index = array[i]}
+
 }
+console.log(index)
+  }
+let array = [-5, 10, -3, 12, -9, 5, 90, 0, 1]
+
+findMax(array)
+*/
+
+/*let fibonacci = [1,1];
+for(let i=0;i<8;i++){
+  fibonacci.push(fibonacci[i]+fibonacci[i+1])
+}
+console.log(fibonacci)*/
+
+/*function nfib(num){
+  let fibonacci = [1,1]
+  
+  if (num === 0){
+    console.log(0);
+  }
+
+  else if (num ===1){
+    console.log(1);
+  }
+  
+
+  else{
+    for (let i=0; i<num-2 ; i++){
+      fibonacci.push(fibonacci[i]+fibonacci[i+1])
+
+    }
+    console.log(fibonacci[num-1])}
+  }
+
+
+nfib(19) */
+
+/* MUST RETRY LATER
+function isPrime(n) {
+  if (n < 2) {
+    return false;
+  } else if (n == 2) {
+    return true;
+  } else if (n > 2) {
+    let maxDiv = Math.sqrt(n);
+    for (let i = 2; i < maxDiv; i++) {
+      if (n % i == 0) {
+        return false;
+      } 
+    }
+    return true;
+  }
 }
 
-ctf()
+console.log(isPrime(7))*/
+
+
+/* 
+Explanation/Logic
+
+
+function sumDigits(n){
+let numString = n.toString()  (Firstly, I turned each character in the number into a string, 
+thus breaking it apart => into "102")
+let arr =[] (Empty array so that I can then store each individual string value into 
+  an index)
+for (let char of numString){  (for each character in the string I push it into the array)
+arr.push(char)
+}
+(
+  AT THIS STAGE, I have produced arr = ["1","0","2"]
+)
+let sum = 0;  (The number that is being summed to)
+for (let i =0;i<arr.length;i++){ 
+  sum += parseInt(arr[i]) (Since I cannot directly add each element of the array,
+    I need to parseInt it to allow for addition of each indiivdiual element)
+}
+console.log(sum) (Sum!)
+}
+
+sumDigits(102) (Call the function)*/
+
+//Check for Prime first
+
+function isPrime(n){
+  if (n<2){
+    return false;
+  }
+  else if (n==2){
+    return true;
+  }
+  else if(n>2){
+    let maxDiv = Math.sqrt(n)
+    for(let i = 2; i<maxDiv;i++){
+      if(n%i ==0){
+        return false;
+      }
+      else{
+        return true;
+      }
+    }
+  }
+}
+
+function printPrimes(nPrimes)
+{
+    let n = 0;
+    let i = 2;
+    
+    while(n < nPrimes)
+    {
+        if (isPrime(i))
+        {
+            console.log(n, " --> ", i);
+            n++;
+        }
+        
+        i++;
+    }
+}
+
+printPrimes(100);
