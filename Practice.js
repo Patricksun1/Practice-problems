@@ -425,11 +425,11 @@ let array = [-5, 10, -3, 12, -9, 5, 90, 0, 1]
 findMax(array)
 */
 
-/*let fibonacci = [1,1];
+let fibonacci = [1,1];
 for(let i=0;i<8;i++){
   fibonacci.push(fibonacci[i]+fibonacci[i+1])
 }
-console.log(fibonacci)*/
+console.log(fibonacci)
 
 /*function nfib(num){
   let fibonacci = [1,1]
@@ -462,7 +462,7 @@ function isPrime(n) {
     return true;
   } else if (n > 2) {
     let maxDiv = Math.sqrt(n);
-    for (let i = 2; i < maxDiv; i++) {
+    for (let i = 2; i <= maxDiv; i++) {
       if (n % i == 0) {
         return false;
       } 
@@ -501,41 +501,43 @@ sumDigits(102) (Call the function)*/
 
 //Check for Prime first
 
-function isPrime(n){
-  if (n<2){
+/* RETRY
+function printPrimes(nPrimes){
+  let n = 0;
+  let i = 2
+while (n<nPrimes){
+  if(checkPrime(i) == true){
+    console.log(n+" --> "+i)
+    n++
+  }
+  i++
+}
+}
+
+
+function checkPrime(n){
+  if(n<2){
     return false;
   }
   else if (n==2){
     return true;
   }
-  else if(n>2){
-    let maxDiv = Math.sqrt(n)
-    for(let i = 2; i<maxDiv;i++){
-      if(n%i ==0){
-        return false;
+  else if (n>2){
+    let maxDiv = Math.sqrt(n);
+    for (let i = 2; i <= maxDiv; i++) {
+      if(n % i == 0){
+        
+      return false;
       }
-      else{
-        return true;
       }
+    return true;
     }
   }
-}
 
-function printPrimes(nPrimes)
-{
-    let n = 0;
-    let i = 2;
-    
-    while(n < nPrimes)
-    {
-        if (isPrime(i))
-        {
-            console.log(n, " --> ", i);
-            n++;
-        }
-        
-        i++;
-    }
-}
+printPrimes(100) */
 
-printPrimes(100);
+
+
+
+
+
